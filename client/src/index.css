@@ -1,0 +1,378 @@
+/**
+ * @file client/src/index.css
+ * @description Global styles for K_M_Cart application.
+ * Imports Tailwind CSS layers and defines custom CSS animations,
+ * scrollbar styling, and global design tokens.
+ * Theme: Indigo Blue (#7C8BF2) + Lavender (#DFE1F2)
+ */
+
+/* ── Tailwind CSS Base Layers ─────────────────────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties (Design Tokens) ────────────────────────── */
+:root {
+  --color-primary: #7C8BF2;
+  --color-primary-light: #8E9AF5;
+  --color-secondary: #DFE1F2;
+  --color-accent: #5A6BE0;
+  --color-accent-hover: #4A5AD0;
+  --color-highlight: #FFD700;
+  --color-surface: #F5F5F5;
+  --color-bg: #FAFAFA;
+  --color-text: #000000;
+  --color-text-muted: #6B7280;
+  --color-border: #C9CDED;
+  --color-success: #22C55E;
+  --color-warning: #EAB308;
+  --color-danger: #EF4444;
+  --color-navbar: #7C8BF2;
+  --color-footer: #1A1A2E;
+  --color-btn: #7C8BF2;
+  --color-btn-hover: #5A6BE0;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --chat-width: 380px;
+  --chat-height: 520px;
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease-out;
+}
+
+/* ── Base Styles ──────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: #000000;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Ensure all text elements use black color */
+  h1, h2, h3, h4, h5, h6,
+  p, span, div, a, button,
+  label, input, textarea, select {
+    color: #000000;
+  }
+
+  /* Override any gray text to black */
+  .text-gray-900,
+  .text-gray-800,
+  .text-gray-700,
+  .text-gray-600 {
+    color: #000000 !important;
+  }
+
+  /* Remove default focus outlines and add custom ones */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* ── Smooth page transitions ──────────────────────────────────────── */
+* {
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+/* ── Custom Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7C8BF2;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5A6BE0;
+}
+
+/* ── Custom Component Styles ──────────────────────────────────────── */
+@layer components {
+  /* Glassmorphism card effect */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-chat;
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#7C8BF2] to-[#5A6BE0];
+  }
+
+  /* Primary gradient button */
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#7C8BF2] to-[#5A6BE0] text-white font-semibold
+           py-2.5 px-6 rounded-xl shadow-lg
+           hover:shadow-button-glow hover:scale-105
+           active:scale-95
+           transition-all duration-200 ease-out
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  /* Ghost/outline button */
+  .btn-ghost {
+    @apply bg-transparent border-2 border-[#7C8BF2] text-[#7C8BF2] font-semibold
+           py-2 px-5 rounded-xl
+           hover:bg-[#7C8BF2] hover:text-white
+           active:scale-95
+           transition-all duration-200 ease-out;
+  }
+
+  /* Input field styling */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200
+           bg-white text-black
+           placeholder:text-gray-400
+           focus:border-[#7C8BF2] focus:ring-2 focus:ring-[#7C8BF2]/20
+           transition-all duration-200
+           outline-none;
+  }
+}
+
+/* ── Utility Classes ──────────────────────────────────────────────── */
+@layer utilities {
+  /* Thin scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 20px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ── Line clamp utilities ─────────────────────────────────────────── */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Chat Message Markdown Styling ────────────────────────────────── */
+.chat-message strong {
+  font-weight: 600;
+}
+
+.chat-message p {
+  margin-bottom: 0.5rem;
+}
+
+.chat-message p:last-child {
+  margin-bottom: 0;
+}
+
+.chat-message ul,
+.chat-message ol {
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.chat-message li {
+  margin-bottom: 0.25rem;
+}
+
+/* ── Animations ───────────────────────────────────────────────────── */
+
+/* Floating animation for decorative icons */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Order success bounce */
+@keyframes success-bounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-success-bounce {
+  animation: success-bounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Cart badge single bounce */
+@keyframes bounce-once {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+.animate-bounce-once {
+  animation: bounce-once 0.3s ease-out;
+}
+
+/* Fade in from top animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Page fade-in-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* ── Toast notification positioning ───────────────────────────────── */
+.toast {
+  position: fixed;
+  top: 80px;
+  right: 16px;
+  z-index: 9999;
+}
+
+/* ── Product Detail Page Animations ───────────────────────────────── */
+
+/* Smooth page entrance for product detail */
+@keyframes productDetailEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-detail-enter {
+  animation: productDetailEnter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Review card staggered entrance */
+@keyframes reviewCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.review-card-enter {
+  animation: reviewCardEnter 0.3s ease-out forwards;
+}
+
+/* Star glow on hover for review form */
+@keyframes starGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.5));
+  }
+}

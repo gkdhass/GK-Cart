@@ -1,0 +1,37 @@
+# ═══════════════════════════════════════════════
+# G_K_Cart — .gitignore
+# ═══════════════════════════════════════════════
+
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment variables (NEVER push these!)
+.env
+.env.local
+.env.*.local
+client/.env
+server/.env
+
+# Build output
+client/dist/
+client/build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Vercel
+.vercel/
