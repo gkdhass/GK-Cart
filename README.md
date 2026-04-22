@@ -9,25 +9,6 @@
   Sleek UI · Secure Payments · AI-Powered Chatbot · Blazing Fast
 </p>
 
-<p align="center">
-  <a href="https://g-k-cart.vercel.app"><img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-brightgreen?style=for-the-badge" alt="Live Demo" /></a>
-  <a href="https://github.com/gkdhass/GK-Cart/stargazers"><img src="https://img.shields.io/github/stars/gkdhass/GK-Cart?style=for-the-badge&color=f59e0b&logo=github" alt="Stars" /></a>
-  <a href="https://github.com/gkdhass/GK-Cart/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License" /></a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=white" alt="React" />
-  <img src="https://img.shields.io/badge/Node.js-18-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/Express-4-000000?style=flat-square&logo=express&logoColor=white" alt="Express" />
-  <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" />
-  <img src="https://img.shields.io/badge/TailwindCSS-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="TailwindCSS" />
-  <img src="https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/Vercel-Deployed-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
-  <img src="https://img.shields.io/badge/Razorpay-Payments-0C2451?style=flat-square&logo=razorpay&logoColor=white" alt="Razorpay" />
-</p>
-
----
-
 ## 📋 Table of Contents
 
 - [About](#-about)
@@ -73,51 +54,6 @@ Whether you're a developer looking for a reference MERN project, a student build
 | **Hosting** | Vercel | Frontend + Serverless backend |
 
 ---
-
-## 📸 Screenshots
-
-### 🏠 Home Page
-> Dynamic homepage with hero banner, featured products, and category browsing
-
-![Home Page](screenshots/home.png)
-
-### 🛍️ Product Listing
-> Search, filter, and browse products with responsive grid layout
-
-![Products](screenshots/products.png)
-
-### 📄 Product Detail
-> Detailed product view with image gallery, reviews, and ratings
-
-![Product Detail](screenshots/detail.png)
-
-### 🛒 Cart Drawer
-> Slide-out cart with quantity controls and live totals
-
-![Cart](screenshots/cart.png)
-
-### 💳 Checkout & Payment
-> Multi-step checkout with Razorpay integration (UPI/Card/NetBanking/COD)
-
-![Checkout](screenshots/checkout.png)
-
-### 🔐 Login / Register
-> Split-layout authentication with form validation
-
-![Auth](screenshots/auth.png)
-
-### 📦 Order History
-> Track and manage your orders with status indicators
-
-![Orders](screenshots/orders.png)
-
-### 🤖 AI Chatbot
-> Smart shopping assistant with quick replies and product suggestions
-
-![Chatbot](screenshots/chatbot.png)
-
-> 📌 **To add screenshots:** Create a `screenshots/` folder in the project root and add your images. Recommended size: 1280×720px.
-
 ---
 ## 👨‍💻 Author
 
@@ -151,5 +87,4 @@ Whether you're a developer looking for a reference MERN project, a student build
 
 <p align="center">
   <strong>G_K_Cart — Shop Smart. Shop Fast. 🛒</strong><br/>
-  <sub>Made with ☕ and lots of JavaScript</sub>
 </p>
