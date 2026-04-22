@@ -32,7 +32,7 @@
 
 **K_M_Cart** is a feature-rich, production-ready e-commerce platform built from scratch using the **MERN stack** (MongoDB, Express, React, Node.js). It delivers a premium shopping experience with a beautiful, responsive UI, secure JWT authentication, Razorpay payment integration, and an AI-powered shopping assistant chatbot.
 
-Whether you're a developer looking for a reference MERN project, a student building your portfolio, or an entrepreneur launching an online store — G_K_Cart has everything you need to get started.
+Whether you're a developer looking for a reference MERN project, a student building your portfolio, or an entrepreneur launching an online store — K_M_Cart has everything you need to get started.
 
 ---
 ## 🛠️ Tech Stack
