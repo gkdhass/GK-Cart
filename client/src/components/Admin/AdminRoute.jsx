@@ -12,10 +12,10 @@ function AdminRoute({ children }) {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-admin-bg">
+      <div className="min-h-screen flex items-center justify-center bg-[#F5F6FC]">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-admin-accent/30 border-t-admin-accent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-slate-400 text-sm">Verifying admin access...</p>
+          <div className="w-12 h-12 border-4 border-[#E8C99A] border-t-[#F96D00] rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-gray-500 text-sm">Verifying admin access...</p>
         </div>
       </div>
     );
